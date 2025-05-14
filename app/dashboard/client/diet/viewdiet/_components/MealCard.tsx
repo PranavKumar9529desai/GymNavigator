@@ -12,7 +12,7 @@ interface MealCardProps {
 
 export const MealCard = ({ meal, index }: MealCardProps) => {
 	const [isExpanded, setIsExpanded] = useState(false);
-	
+
 	// Determine meal type from timeOfDay
 	const getMealTypeInfo = (timeOfDay: string) => {
 		if (timeOfDay.includes('7:00 AM'))
@@ -73,9 +73,13 @@ export const MealCard = ({ meal, index }: MealCardProps) => {
 		: ['No specific instructions provided'];
 
 	return (
-		<div className={`mb-4 rounded-lg shadow-sm border border-gray-100 overflow-hidden ${mealInfo.bgColor}`}>
+		<div
+			className={`mb-4 rounded-lg shadow-sm border border-gray-100 overflow-hidden ${mealInfo.bgColor}`}
+		>
 			{/* Meal header */}
-			<div className={`border-l-2 ${mealInfo.borderColor} pl-3 p-3 flex items-center justify-between ${mealInfo.bgColor}`}>
+			<div
+				className={`border-l-2 ${mealInfo.borderColor} pl-3 p-3 flex items-center justify-between ${mealInfo.bgColor}`}
+			>
 				<div className="flex items-center gap-2">
 					<span className="text-lg" role="img" aria-label={mealInfo.type}>
 						{mealInfo.icon}
@@ -119,9 +123,19 @@ export const MealCard = ({ meal, index }: MealCardProps) => {
 					<div className="mb-4">
 						<h4 className="text-xs font-semibold text-gray-700 mb-2 flex items-center">
 							<span className="bg-gray-100 rounded-full p-1 mr-2">
-								<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-									<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-									<circle cx="12" cy="10" r="3"/>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="12"
+									height="12"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									strokeWidth="2"
+									strokeLinecap="round"
+									strokeLinejoin="round"
+								>
+									<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+									<circle cx="12" cy="10" r="3" />
 								</svg>
 							</span>
 							Ingredients
@@ -150,9 +164,19 @@ export const MealCard = ({ meal, index }: MealCardProps) => {
 					<div>
 						<h4 className="text-xs font-semibold text-gray-700 mb-2 flex items-center">
 							<span className="bg-gray-100 rounded-full p-1 mr-2">
-								<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-									<path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
-									<polyline points="14 2 14 8 20 8"/>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="12"
+									height="12"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									strokeWidth="2"
+									strokeLinecap="round"
+									strokeLinejoin="round"
+								>
+									<path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+									<polyline points="14 2 14 8 20 8" />
 								</svg>
 							</span>
 							Instructions

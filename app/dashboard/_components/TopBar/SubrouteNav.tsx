@@ -23,7 +23,7 @@ const SubrouteNav: React.FC<SubrouteNavProps> = ({ subroutes, status }) => {
 	const [, setIsScrolled] = useState(false);
 	const [showLabels, setShowLabels] = useState(true);
 	const { getIconByName } = useLucideIcons();
-	
+
 	// Call this to ensure common icons are included in the bundle
 	// This is a no-op function at runtime but helps with optimization
 	preloadCommonIcons();

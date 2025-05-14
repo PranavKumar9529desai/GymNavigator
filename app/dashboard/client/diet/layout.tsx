@@ -5,5 +5,9 @@ export default function DietLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	return <div className="w-full max-w-full sm:container sm:mx-auto px-0 sm:px-4">{children}</div>;
+	return (
+		<div className="w-full max-w-full sm:container sm:mx-auto px-0 sm:px-4">
+			{children}
+		</div>
+	);
 }

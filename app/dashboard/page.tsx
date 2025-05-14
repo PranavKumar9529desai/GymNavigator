@@ -1,5 +1,5 @@
-import React from "react";
+import React from 'react';
 
 export default function page() {
-  return <div className="hidden">dashboard</div>;
+	return <div className="hidden">dashboard</div>;
 }

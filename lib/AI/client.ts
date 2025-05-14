@@ -36,7 +36,6 @@ export async function generateWithGemini(
 	},
 ) {
 	try {
-		// Additional validation to provide clearer error messages
 		if (!geminiApiKey) {
 			throw new Error(
 				'Gemini API key is not configured. Please check your environment variables.',
@@ -45,7 +44,7 @@ export async function generateWithGemini(
 
 		// Using free tier model instead of pro models
 		// Try gemini-1.0-pro-vision-latest first (available on free tier)
-		const modelName = 'gemini-1.5-flash';
+		const modelName = 'gemini-2.0-flash';
 
 		const model = genAI.getGenerativeModel({
 			model: modelName,

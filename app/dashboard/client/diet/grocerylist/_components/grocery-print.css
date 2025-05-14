@@ -1,30 +1,31 @@
 /* Print styles for grocery lists */
 @media print {
-  @page {
-    size: portrait;
-    margin: 1cm;
-  }
-  
-  body * {
-    visibility: hidden;
-  }
-  
-  .grocery-print-content, .grocery-print-content * {
-    visibility: visible;
-  }
-  
-  .grocery-print-content {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-  }
-  
-  .print:hidden {
-    display: none !important;
-  }
-  
-  .accordion-content {
-    display: block !important;
-  }
+	@page {
+		size: portrait;
+		margin: 1cm;
+	}
+
+	body * {
+		visibility: hidden;
+	}
+
+	.grocery-print-content,
+	.grocery-print-content * {
+		visibility: visible;
+	}
+
+	.grocery-print-content {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+	}
+
+	.print:hidden {
+		display: none !important;
+	}
+
+	.accordion-content {
+		display: block !important;
+	}
 }

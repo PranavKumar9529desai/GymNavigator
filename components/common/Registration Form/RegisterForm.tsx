@@ -184,6 +184,18 @@ export default function RegisterForm() {
 	return (
 		<div className="w-full max-w-md mx-auto p-8 rounded-xl shadow-xl">
 			<div className="space-y-8">
+				{/* Form Status Banner */}
+				{error && type && (
+					<div className="mb-4 animate-fadeIn">
+						<FormError
+							FormErrorProps={{
+								message: error,
+								type: type as 'success' | 'fail',
+							}}
+						/>
+					</div>
+				)}
+
 				<Form {...form}>
 					<form
 						onSubmit={form.handleSubmit(onSubmit)}
@@ -328,7 +340,7 @@ export default function RegisterForm() {
 												<SelectValue placeholder="Select your Role" />
 											</SelectTrigger>
 										</FormControl>
-										<SelectContent className="z-50 bg-blue-900/80 backdrop-blur-md border-blue-500/30 text-white">
+										<SelectContent className="z-50 bg-blue-900/80 backdrop-blur-md border-blue-500/30">
 											<SelectItem
 												value="owner"
 												className="hover:bg-blue-800/50"
@@ -371,14 +383,6 @@ export default function RegisterForm() {
 					</form>
 				</Form>
 
-				{error && type ? (
-					<FormError
-						FormErrorProps={{
-							message: error,
-							type: type as 'success' | 'fail',
-						}}
-					/>
-				) : null}
 				<div className="relative">
 					<div className="absolute inset-0 flex items-center">
 						<span className="w-full border-t border-blue-500/30" />

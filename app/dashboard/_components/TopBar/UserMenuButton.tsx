@@ -22,7 +22,7 @@ const UserMenuButton: FC = () => {
 	};
 
 	const handleSignOut = () => {
-		signOut({ callbackUrl: '/login' });
+		signOut({ callbackUrl: '/signin' });
 	};
 
 	const menuItems: MenuItem[] = [

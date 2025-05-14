@@ -12,14 +12,11 @@ import { WorkoutNotAssigned } from './_component/workout-not-assigned';
 
 export default async function MyWorkoutsPage() {
 	try {
-		// Fetch both workout and diet data concurrently
-		const [workout, dietPlan] = await Promise.all([
-			getTodaysWorkout(),
-			getTodaysDiet(),
-		]);
+		// Fetch workout data concurrently
+		const [workout] = await Promise.all([getTodaysWorkout()]);
 
 		return (
-			<div className="space-y-10">
+			<div className="space-y-10 ">
 				<Suspense fallback={<div>Loading workout data...</div>}>
 					<section>
 						{!workout ? (
@@ -28,16 +25,6 @@ export default async function MyWorkoutsPage() {
 							<RestDay />
 						) : (
 							<TodaysWorkouts workout={workout} />
-						)}
-					</section>
-				</Suspense>
-
-				<Suspense fallback={<div>Loading diet data...</div>}>
-					<section>
-						{!dietPlan ? (
-							<DietNotAssigned />
-						) : (
-							<TodaysDiet dietPlan={dietPlan} />
 						)}
 					</section>
 				</Suspense>
