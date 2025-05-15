@@ -203,4 +203,52 @@ export const authClient = {
 			};
 		}
 	},
+
+	/**
+	 * Get user information by ID
+	 */
+	getUserInfoById: async (userId: string): Promise<ApiResult<UserInfoResponse>> => {
+		try {
+			const axiosInstance = await SigninReqConfig();
+			const response = await axiosInstance.get('/getuserinfobyid', {
+				params: { userId },
+			});
+
+			const apiResponse = response.data as ApiResponse<UserInfoResponse>;
+
+			if (!apiResponse.success) {
+				return {
+					success: false,
+					error: {
+						code: apiResponse.error || 'UNKNOWN_ERROR',
+						message: apiResponse.message || 'Unknown error occurred',
+					},
+				};
+			}
+
+			return {
+				success: true,
+				data: apiResponse.data,
+			};
+		} catch (error: unknown) {
+			// Handle network errors or other unexpected issues
+			if (error && typeof error === 'object') {
+				return {
+					success: false,
+					error: {
+						code: 'REQUEST_FAILED',
+						message: 'Failed to retrieve user information',
+					},
+				};
+			}
+
+			return {
+				success: false,
+				error: {
+					code: 'UNKNOWN_ERROR',
+					message: 'An unknown error occurred',
+				},
+			};
+		}
+	},
 };

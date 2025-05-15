@@ -14,6 +14,16 @@ const nextConfig = {
 
 	// SWC Compiler Configuration
 
+	// Add runtime configuration for auth routes
+	experimental: {
+		serverComponentsExternalPackages: ['nodemailer'],
+	},
+	
+	// Set runtime for specific routes
+	serverRuntimeConfig: {
+		runtime: 'nodejs',
+	},
+	
 	images: {
 		remotePatterns: [
 			{

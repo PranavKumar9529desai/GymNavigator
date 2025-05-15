@@ -87,5 +87,5 @@ export default async function middleware(request: NextRequest) {
  * Excludes specific paths from middleware processing
  */
 export const config = {
-	matcher: ['/((?!api|_next/static|_next/image|favicon.ico|.*\\..*).*)'],
+	matcher: ['/((?!api|_next/static|_next/image|favicon.ico|verify|verify-request|.*\\..*).*)'],
 };
